@@ -1,11 +1,10 @@
 package com.example.blog.User;
 
-import com.example.blog.Blog.Post;
-import com.example.blog.Blog.PostService;
+import com.example.blog.Post.Post;
+import com.example.blog.Post.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
-import javax.websocket.server.PathParam;
 import java.util.List;
 
 @RestController

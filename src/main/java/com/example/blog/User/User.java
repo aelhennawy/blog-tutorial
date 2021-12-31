@@ -1,6 +1,6 @@
 package com.example.blog.User;
 
-import com.example.blog.Blog.Post;
+import com.example.blog.Post.Post;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import javax.persistence.*;

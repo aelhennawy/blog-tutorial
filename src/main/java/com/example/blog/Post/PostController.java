@@ -1,4 +1,4 @@
-package com.example.blog.Blog;
+package com.example.blog.Post;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

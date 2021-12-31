@@ -1,4 +1,4 @@
-package com.example.blog.Blog;
+package com.example.blog.Post;
 
 import com.example.blog.User.User;
 
