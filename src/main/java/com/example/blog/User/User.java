@@ -1,5 +1,6 @@
 package com.example.blog.User;
 
+import com.example.blog.Comment.Comment;
 import com.example.blog.Post.Post;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
@@ -42,6 +43,10 @@ public class User {
     @JsonIgnore
     private List<Post> posts;
 
+    @OneToMany(mappedBy = "user")
+    @JsonIgnore
+    private List<Comment> comments;
+
 
     public User(String name, String email) {
         this.name = name;
@@ -74,6 +79,14 @@ public class User {
 
     public void setPosts(List<Post> posts) {
         this.posts = posts;
+    }
+
+    public List<Comment> getComments() {
+        return comments;
+    }
+
+    public void setComments(List<Comment> comments) {
+        this.comments = comments;
     }
 
     @Override
