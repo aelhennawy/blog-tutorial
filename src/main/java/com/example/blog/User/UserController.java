@@ -30,9 +30,4 @@ public class UserController {
         userService.createUser(user);
     }
 
-    @PostMapping("{user_id}/posts")
-    public void createPost(@PathVariable("user_id") Long id, @RequestBody Post post){
-        postService.createPost(post, id);
-    }
-
 }

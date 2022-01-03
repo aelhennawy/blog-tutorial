@@ -23,9 +23,13 @@ public class PostService {
         return postRepository.findAll();
     }
 
-    public void createPost(Post post, Long user_id){
-        User user = userService.getById(user_id);
-        post.setUser(user);
-        postRepository.save(post);
+    public void createPost(PostRequest post){
+        User user = userService.getById(post.getUser_id());
+        Post new_post = new Post();
+        new_post.setTitle(post.getTitle());
+        new_post.setBody(post.getBody());
+        new_post.setUser(user);
+
+        postRepository.save(new_post);
     }
 }

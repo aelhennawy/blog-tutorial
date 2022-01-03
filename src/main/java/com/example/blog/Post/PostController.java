@@ -21,4 +21,8 @@ public class PostController {
         return postService.getALl();
     }
 
+    @PostMapping()
+    public void createPost(@RequestBody PostRequest post){
+        postService.createPost(post);
+    }
 }
