@@ -16,6 +16,21 @@
 	<properties>
 		<java.version>11</java.version>
 	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<!-- CRNK BOM -->
+			<dependency>
+				<groupId>io.crnk</groupId>
+				<artifactId>crnk-bom</artifactId>
+				<version>3.4.20210509072026</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<!-- End of CRNK BOM -->
+		</dependencies>
+	</dependencyManagement>
+
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -45,6 +60,102 @@
 			<artifactId>reactor-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
+		<!---->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.security.oauth.boot</groupId>
+			<artifactId>spring-security-oauth2-autoconfigure</artifactId>
+			<version>2.0.1.RELEASE</version>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-setup-spring-boot2</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-data-jpa</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-data-facet</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-format-plain-json</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-validation</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-home</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-ui</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-operations</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>io.crnk</groupId>
+			<artifactId>crnk-security</artifactId>
+		</dependency>
+		<!---->
+
+
+		<!--CRNK-->
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-core</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-spring</artifactId>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-client</artifactId>-->
+<!--		</dependency>-->
+
+
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-setup-spring-boot2</artifactId>-->
+<!--			<version>${crnk.version}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-client</artifactId>-->
+<!--			<version>${crnk.version}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-validation</artifactId>-->
+<!--			<version>${crnk.version}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-security</artifactId>-->
+<!--			<version>${crnk.version}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-jpa</artifactId>-->
+<!--			<version>${crnk.version}</version>-->
+<!--		</dependency>-->
+<!--		<dependency>-->
+<!--			<groupId>io.crnk</groupId>-->
+<!--			<artifactId>crnk-monitor-brave4</artifactId>-->
+<!--			<version>${crnk.version}</version>-->
+<!--		</dependency>-->
+
 	</dependencies>
 
 	<build>
