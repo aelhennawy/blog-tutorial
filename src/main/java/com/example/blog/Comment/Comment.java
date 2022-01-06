@@ -2,6 +2,8 @@ package com.example.blog.Comment;
 
 import com.example.blog.Post.Post;
 import com.example.blog.User.User;
+import io.crnk.core.resource.annotations.JsonApiId;
+import io.crnk.core.resource.annotations.JsonApiResource;
 
 import javax.persistence.*;
 
@@ -11,7 +13,7 @@ public class Comment {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private long id;
 
     @Column(nullable = false, columnDefinition = "TEXT")
     private String body;

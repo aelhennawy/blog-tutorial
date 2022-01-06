@@ -3,6 +3,8 @@ package com.example.blog.Post;
 import com.example.blog.Comment.Comment;
 import com.example.blog.User.User;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import io.crnk.core.resource.annotations.JsonApiId;
+import io.crnk.core.resource.annotations.JsonApiResource;
 
 import javax.persistence.*;
 
@@ -15,16 +17,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
 public class Post {
 
     @Id
-    @SequenceGenerator(
-            name = "post_sequence",
-            sequenceName = "post_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = SEQUENCE,
-            generator = "post_sequence"
-    )
-    private Long id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
     @Column(
             nullable = false
@@ -47,10 +41,19 @@ public class Post {
 
     public Post() { }
 
-    public Post(String title, String body, User user) {
-        this.title = title;
-        this.body = body;
-        this.user = user;
+//    public Post(String title, String body, User user) {
+//        this.title = title;
+//        this.body = body;
+//        this.user = user;
+//    }
+
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
     }
 
     public String getTitle() {
@@ -83,14 +86,5 @@ public class Post {
 
     public void setComments(List<Comment> comments) {
         this.comments = comments;
-    }
-
-    @Override
-    public String toString() {
-        return "Post{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", body='" + body + '\'' +
-                '}';
     }
 }
