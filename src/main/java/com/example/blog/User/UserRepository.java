@@ -62,7 +62,6 @@ public class UserRepository {
     }
 
 
-
     public void query() {
 //        AttributeValue attributeValue = AttributeValue.builder().s("user#").build();
 //        QueryConditional queryConditional = QueryConditional.
@@ -76,5 +75,4 @@ public class UserRepository {
         return dynamoDbEnhancedClient.table("Blog",
                 TableSchema.fromBean(User.class));
     }
-
 }

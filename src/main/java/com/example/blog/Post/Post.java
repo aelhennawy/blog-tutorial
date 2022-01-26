@@ -35,6 +35,7 @@ public class Post {
         this.body = body;
     }
 
+    @DynamoDbPartitionKey
     @DynamoDbAttribute("PK")
     public String getPk() {
         return pk;
@@ -49,6 +50,7 @@ public class Post {
     }
 
     @DynamoDbSecondaryPartitionKey(indexNames = {"posts"})
+    @DynamoDbSortKey
     @DynamoDbAttribute("SK")
     public void setSk(String sk) {
         this.sk = sk;

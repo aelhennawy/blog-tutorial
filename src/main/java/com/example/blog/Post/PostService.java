@@ -1,5 +1,6 @@
 package com.example.blog.Post;
 
+import com.example.blog.User.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.core.pagination.sync.SdkIterable;
@@ -21,10 +22,14 @@ public class PostService {
     public void create(Post post) {
         post.setKeys(post.getId(), post);
 
-        System.out.println(post.getPk());
-        System.out.println(post.getSk());
-        System.out.println(post.getUser_id());
-
         postRepository.save(post);
+    }
+
+    public Iterator<Post> getUserPosts(String id) {
+        return postRepository.getUserPosts(id);
+    }
+
+    public List<Post> filterByDate(String startDate, String endDate){
+        return postRepository.filterByDate(startDate, endDate);
     }
 }
