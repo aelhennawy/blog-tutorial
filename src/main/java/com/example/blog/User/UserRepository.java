@@ -52,8 +52,6 @@ public class UserRepository {
 
     public User update(String id, User user) {
         DynamoDbTable<User> blogTable = getTable();
-        System.out.println(user.getPk());
-        System.out.println(user.getSk());
         blogTable.putItem(user);
         return user;
     }
