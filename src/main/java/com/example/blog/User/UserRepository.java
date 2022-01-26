@@ -22,6 +22,7 @@ public class UserRepository {
     @Autowired
     private DynamoDbEnhancedClient dynamoDbEnhancedClient;
 
+    //Get users using base table, filter results using SK begins_with user#
     public Iterator<User> getAll() {
         DynamoDbTable<User> blogTable = getTable();
 

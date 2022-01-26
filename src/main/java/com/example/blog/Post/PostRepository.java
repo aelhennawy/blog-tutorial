@@ -20,6 +20,7 @@ public class PostRepository {
     @Autowired
     private DynamoDbEnhancedClient dynamoDbEnhancedClient;
 
+    //Get posts using posts GSI
     public List<Post> getAll() {
         DynamoDbTable<Post> table = getTable();
 
@@ -40,6 +41,7 @@ public class PostRepository {
         return postList;
     }
 
+    //Get posts using posts GSI, filter result using GSI SK(post_date)
     public List<Post> filterByDate(String startDate, String endDate){
         List<Post> postList = new ArrayList<>();
         DynamoDbTable<Post> table = getTable();
@@ -76,6 +78,7 @@ public class PostRepository {
         table.putItem(post);
     }
 
+    //Get posts using base table, filter results on PK=user_id and SK begin_with post
     public Iterator<Post> getUserPosts(String id) {
         DynamoDbTable<Post> blogTable = getTable();
 
