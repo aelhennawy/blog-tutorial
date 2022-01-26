@@ -20,6 +20,15 @@ public class PostRepository {
     @Autowired
     private DynamoDbEnhancedClient dynamoDbEnhancedClient;
 
+    public Post getById(String id){
+        DynamoDbTable<Post> table = getTable();
+        DynamoDbIndex<Post> index = table.index("posts");
+
+        Key key = Key.builder().partitionValue("post#"+id).build();
+        QueryConditional queryConditional = QueryConditional.keyEqualTo(key);
+        return index.query(queryConditional).iterator().next().items().get(0);
+    }
+
     //Get posts using posts GSI
     public List<Post> getAll() {
         DynamoDbTable<Post> table = getTable();

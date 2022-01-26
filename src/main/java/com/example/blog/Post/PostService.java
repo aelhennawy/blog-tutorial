@@ -19,6 +19,10 @@ public class PostService {
         return postRepository.getAll();
     }
 
+    public Post getById(String id){
+        return postRepository.getById(id);
+    }
+
     public void create(Post post) {
         post.setKeys(post.getId(), post);
 
