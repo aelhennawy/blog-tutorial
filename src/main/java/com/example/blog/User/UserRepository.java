@@ -1,13 +1,8 @@
 package com.example.blog.User;
 
-import com.example.blog.Blog;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
-import software.amazon.awssdk.core.pagination.sync.SdkIterable;
 import software.amazon.awssdk.enhanced.dynamodb.*;
-import software.amazon.awssdk.enhanced.dynamodb.model.Page;
-import software.amazon.awssdk.enhanced.dynamodb.model.QueryConditional;
-import software.amazon.awssdk.enhanced.dynamodb.model.QueryEnhancedRequest;
 import software.amazon.awssdk.enhanced.dynamodb.model.ScanEnhancedRequest;
 import software.amazon.awssdk.services.dynamodb.model.AttributeValue;
 
@@ -60,16 +55,6 @@ public class UserRepository {
     public void delete(User user) {
         DynamoDbTable<User> blogTable = getTable();
         blogTable.deleteItem(Key.builder().partitionValue(user.getPk()).sortValue(user.getSk()).build());
-    }
-
-
-    public void query() {
-//        AttributeValue attributeValue = AttributeValue.builder().s("user#").build();
-//        QueryConditional queryConditional = QueryConditional.
-//                sortBeginsWith(Key.builder().sortValue(attributeValue).build());
-//
-//        SdkIterable<Page<User>> result = blogTable.query(QueryEnhancedRequest.builder().queryConditional(queryConditional).build());
-
     }
 
     private DynamoDbTable<User> getTable() {
